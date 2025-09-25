@@ -76,3 +76,11 @@ gulp.task('default', gulp.parallel('dist-css', 'dist-js'));
 
 // Replacement Tasks
 gulp.task('replacement', gulp.series(replaceTasks.css, replaceTasks.js));
+
+// Tarea vacía para asegurar que el proceso termine correctamente
+gulp.task('noop', function(done){
+    done();
+});
+
+// Nueva tarea principal de construcción que usará Netlify
+gulp.task('build', gulp.series('dist', 'noop'));
