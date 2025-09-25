@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html class="loading semi-dark-layout" lang="en" data-layout="semi-dark-layout" data-textdirection="ltr">
+<!-- BEGIN: Head--> 
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0,minimal-ui">
+    <meta name="description" content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
+    <meta name="keywords" content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
+    <meta name="author" content="PIXINVENT">
+    <title>Dashboard - New Order</title>
+    <link rel="apple-touch-icon" href="../../../app-assets/images/ico/apple-icon-120.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../../../app-assets/images/ico/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600" rel="stylesheet">
+
+    <!-- BEGIN: Vendor CSS-->
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/vendors.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/vendors.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/tables/datatable/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/tables/datatable/responsive.bootstrap5.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/tables/datatable/buttons.bootstrap5.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/tables/datatable/rowGroup.bootstrap5.min.css">
+
+    <!-- BEGIN: Theme CSS-->
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/bootstrap-extended.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/colors.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/components.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/themes/semi-dark-layout.css">
+
+    <!-- BEGIN: Page CSS-->
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/core/menu/menu-types/vertical-menu.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/themes/semi-dark-layout.css">
+    <!-- END: Page CSS-->
+
+    <!-- BEGIN: Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="../../../assets/css/style.css">
+    
+
+    <!-- END: Custom CSS-->
+
+</head>
+<!-- END: Head-->
+ <!--Style Modal saved-->
+   <style>
+    /* CSS for a more visually appealing modal */
+    .modal-success .modal-content {
+      border-radius: 1rem;
+      border: none;
+    }
+
+    .success-checkmark {
+      width: 100px;
+      height: 100px;
+      margin: 20px auto;
+      display: block;
+      position: relative; 
+    }
+
+    .success-checkmark .check-icon {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      display: block;
+      stroke-width: 4;
+      stroke: #4CAF50;
+      stroke-miterlimit: 10;
+      box-shadow: inset 0px 0px 0px #4CAF50;
+      animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    
+    .success-checkmark .check-icon__circle {
+      stroke-dasharray: 166;
+      stroke-dashoffset: 166;
+      stroke-width: 3;
+      stroke-miterlimit: 10;
+      stroke: #4CAF50;
+      fill: none;
+      animation: stroke .6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+    }
+
+    .success-checkmark .check-icon__path {
+      transform-origin: 50% 50%;
+      stroke-dasharray: 48;
+      stroke-dashoffset: 48;
+      stroke-width: 4;
+      stroke: #fff;
+      fill: none;
+      animation: stroke .3s cubic-bezier(0.65, 0, 0.45, 1) .8s forwards;
+    }
+
+    @keyframes stroke {
+      100% {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    @keyframes scale {
+      0%, 100% {
+        transform: none;
+      }
+      50% {
+        transform: scale3d(1.1, 1.1, 1);
+      }
+    }
+
+    @keyframes fill {
+      100% {
+        box-shadow: inset 0px 0px 0px 50px #4CAF50;
+      }
+    }
+  </style>
+  <!--end modal saved -->
+
+<!-- BEGIN: Body-->
+
+<body class="vertical-layout vertical-menu-modern  navbar-floating footer-static  " data-open="click" data-menu="vertical-menu-modern" data-col="">
+
+    <!-- BEGIN: Header-->
+    <nav class="header-navbar navbar navbar-expand-lg align-items-center floating-nav navbar-light navbar-shadow">
+        <div class="navbar-container d-flex content">
+            <div class="bookmark-wrapper d-flex align-items-center">
+                <ul class="nav navbar-nav d-xl-none">
+                    <li class="nav-item"><a class="nav-link menu-toggle" href="#"><i class="ficon" data-feather="menu"></i></a></li>
+                </ul>
+            </div>
+            <ul class="nav navbar-nav align-items-center ms-auto">
+                <li class="nav-item dropdown dropdown-user"><a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div class="user-nav d-sm-flex d-none"><span class="user-name fw-bolder">John Doe</span><span class="user-status">Admin</span></div><span class="avatar"><img class="round" src="../../../app-assets/images/portrait/small/avatar-s-11.jpg" alt="avatar" height="40" width="40"><span class="avatar-status-online"></span></span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-user"><a class="dropdown-item" href="#"><i class="me-50" data-feather="user"></i> Profile</a><a class="dropdown-item" href="#"><i class="me-50" data-feather="help-circle"></i> FAQ</a><a class="dropdown-item" href="#"><i class="me-50" data-feather="power"></i> Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- END: Header-->
+
+
+    <!-- BEGIN: Main Menu-->
+    <div class="main-menu menu-fixed menu-dark menu-accordion menu-shadow" data-scroll-to-active="true">
+        <div class="navbar-header" style=" background-image: url('../../../../app-assets/images/logo/logo.svg'); background-size: cover; align-content: center; width: 300px; height: 80px; margin-left: 8px; margin-top: 8px;">
+        </div>
+        <div class="shadow-bottom"></div>
+        <div class="main-menu-content">
+            <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="pie-chart"></i><span class="menu-title text-truncate" data-i18n="Dashboard">Dashboard</span></a>
+                </li>
+                <li class=" active nav-item"><a class="d-flex align-items-center has-sub" href="#"><i data-feather="shopping-bag"></i><span class="menu-title text-truncate" data-i18n="Storage">Storage</span></a>
+                    <ul class="menu-content">
+                                <li class="active"><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Create Order"> Create Order</span></a>
+                                </li>
+                                <li>
+                                    <a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Products">Products</span></a>
+                                    <ul class="menu-content">
+                                        <li>
+                                            <a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Products List">Products List</span></a>
+                                        </li>
+                                        <li>
+                                            <a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Inventory List">Inventory List</span></a>
+                                        </li>
+                                        <li>
+                                            <a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Quarantine Store">Quarantine Store</span></a>
+                                        </li>
+                                        <li>
+                                            <a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Product Import">Product Import</span></a>
+                                        </li>
+                                        <li>
+                                            <a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="GeoData Import">GeoData Import</span></a>
+                                        </li>
+                                        <li>
+                                            <a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Product Bundle Import">Product Bundle Import</span></a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Goods Receipts">Goods Receipts</span></a>
+                                    <ul class="menu-content">
+                                        <li>
+                                            <a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Goods Receipt List">Goods Receipt List</span></a>
+                                        </li>
+                                        <li>
+                                            <a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Notifiy Goods Receipt">Notifiy Goods Receipt</span></a>
+                                        </li>
+                                        <li>
+                                            <a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Goods Receipt Import">Goods Receipt Import</span></a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Document Manager">Document Manager</span></a>
+                                </li>
+                    </ul> 
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center has-sub" href="#"><i data-feather="shopping-bag"></i><span class="menu-title text-truncate" data-i18n="Settings">Management</span></a>
+                    <ul class="menu-content">
+                        <li ><a class="d-flex align-items-cente" href="../../../starter-kit/ltr/vertical-menu-template-semi-dark/ordersClient.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Orders">Orders</span></a>   
+                        </li>
+                        <li><a class="d-flex align-items-cente" href="../../../starter-kit/ltr/vertical-menu-template-semi-dark/parcelsClient.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Parcels">Parcels</span></a>   
+                        </li>
+                        
+                        <li><a class="d-flex align-items-cente" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Return Orders">Return Orders</span></a>   
+                        </li>
+                    </ul>
+                </li>
+                 <li class=" nav-item"><a class="d-flex align-items-center has-sub" href="#"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="Account">Account</span></a>
+                    <ul class="menu-content">
+                        <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Profile Settings">Profile Settings</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="User Settings">User Settings</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center has-sub" href="#"><i data-feather="truck"></i><span class="menu-title text-truncate" data-i18n="Batch Management">Batch Management</span></a>
+                    <ul class="menu-content">
+                        <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Batch Inventory">Batch Inventory</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List Batch & BBD Report">List Batch & BBD Report</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="New Batch & BBD Reportt">New Batch & BBD Report</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center has-sub" href="#"><i data-feather="file-text"></i><span class="menu-title text-truncate" data-i18n="Reporting Area">Reporting Area</span></a>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center has-sub" href="#"><i data-feather="help-circle"></i><span class="menu-title text-truncate" data-i18n="FAQ">FAQ</span></a>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center has-sub" href="#"><i data-feather="file-text"></i><span class="menu-title text-truncate" data-i18n="Guideline">Guideline</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- END: Main Menu-->
+
+    <!-- BEGIN: Content-->
+    <div class="app-content content ">
+        <div class="content-overlay"></div>
+        <div class="header-navbar-shadow"></div>
+        <div class="content-wrapper">
+            <div class="content-header row">
+                <div class="content-header-left col-md-9 col-12 mb-2">
+                    <div class="row breadcrumbs-top">
+                        <div class="col-12">
+                            <h2 class="content-header-title float-start mb-0"> New Goods Receipts</h2>
+                            <div class="breadcrumb-wrapper">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="#">Storage</a>
+                                    </li>
+                                    <li class="breadcrumb-item"><a href="#">Goods Receipts</a>
+                                    </li>
+                                    <li class="breadcrumb-item active">New Goods Receipt</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-body">
+                <!-- Basic Tables start -->
+                <section id="contet">
+                    <div class="row">
+                        <div class="col-8">
+                            <div class="row">
+                                <div class="card mb-2">
+                                    <div class="card-header border-bottom">
+                                        <h4 class="card-title">Order Information</h4>
+                                        <div class="col-12">
+                                            <div class="card-body">
+                                                <form class="row g-1">
+                                                        <div class="col-md-6">
+                                                            <label class="form-label" for="orderNumber">Order Number</label>
+                                                            <input type="text" id="orderNumber" class="form-control" placeholder="Order Number" />
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label class="form-label" for="deliveryDate"> Expected Delivery Date</label>  
+                                                            <input type="date" id="deliveryDate" class="form-control" placeholder="Expected Delivery Date" />
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label class="form-label" for="descriptionGoods">Descriptions of Goods</label>
+                                                            <input type="text" id="descriptionGoods" class="form-control" placeholder="Descriptions of Goods" />
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label class="form-label" for="orderType">Order Type (B2C - B2B)</label>
+                                                            <select id="orderType" class="form-select">
+                                                                <option selected>Choose...</option>
+                                                                <option value="1">B2C</option>
+                                                                <option value="2">B2B</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <label class="form-label" for="invoiceCurrency">Invoice Currency</label>
+                                                            <select id="invoiceCurrency" class="form-select">
+                                                                <option selected>Choose...</option>
+                                                                <option value="1">USD</option>
+                                                                <option value="2">EUR</option>
+                                                                <option value="3">GBP</option>
+                                                                <option value="4">JPY</option>
+                                                                <option value="5">CNY</option>
+                                                                <option value="6">INR</option>
+                                                                <option value="7">AUD</option>
+                                                                <option value="8">CAD</option> 
+                                                                <option value="9">CHF</option>
+                                                                <option value="10">SEK</option>
+                                                                <option value="11">NZD</option>
+                                                                <option value="12">MXN</option>
+                                                                <option value="13">SGD</option>
+                                                                <option value="14">HKD</option>
+                                                                <option value="15">NOK</option>
+                                                                <option value="16">KRW</option>
+                                                                <option value="17">TRY</option>
+                                                            </select>
+                                                        </div>
+                                                </form>
+                                            </div> 
+                                        </div>  
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="card mb-2">
+                                    <div class="card-header border-bottom">
+                                        <h4 class="card-title">Select Products</h4>
+                                        <div class="col-md-6 text-end">
+                                                        <button type="button" class="btn btn-primary me-1" id="addProductsButton" data-bs-toggle="modal" data-bs-target="#addItemsModal">Add Products</button>
+                                                    </div>
+                                        <div class="col-12">
+                                            <div class="card-body">
+                                                    
+                                                    <div class="col-12 mt-2 mb-0">
+                                                        <table class="table">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Product Name</th>
+                                                                    <th>SKU</th>
+                                                                    <th>Quantity</th>
+                                                                    <th>Unit Price</th>
+                                                                    <th>Total Price</th>
+                                                                    <th>Actions</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>Sample Product 1</td>
+                                                                    <td>SP001</td>
+                                                                    <td>2</td>
+                                                                    <td>50.00</td>
+                                                                    <td>100.00</td>
+                                                                    <td><button class="btn btn-sm btn-danger">Remove</button></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Sample Product 2</td>
+                                                                    <td>SP002</td>
+                                                                    <td>1</td>
+                                                                    <td>150.00</td>
+                                                                    <td>150.00</td>
+                                                                    <td><button class="btn btn-sm btn-danger">Remove</button></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                            </div> 
+                                        </div>  
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="card mb-2">
+                                    <div class="card-header border-bottom">
+                                        <h4 class="card-title">Shipping Information</h4>
+                                        <div class="col-12">
+                                            <div class="card-body">
+                                                <form class="row g-1">
+                                                        <div class="col-md-6">
+                                                            <label class="form-label" for="shippingMethod">Shipping Provider <tooltip class="float-end" data-bs-toggle="tooltip" data-bs-placement="top" title="If you do not select a shipping profile, your order will be shipped via default shipping service provider"><i data-feather="info"></i></tooltip></label>
+                                                            <select id="shippingMethod" class="form-select">
+                                                                <option selected>Auto Shipping Service provider</option>
+                                                                <option value="1">DPD Dispatcher</option> 
+                                                                <option value="2">DHL National</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label class="form-label" for="shippingCost">Shipping Cost</label>
+                                                            <input type="text" id="shippingCost" class="form-control" placeholder="0.00" />
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label class="form-label" for="storage">Select Storage  <tooltip class="float-end" data-bs-toggle="tooltip" data-bs-placement="top" title="You can choose the storage, where you want to send the order to"><i data-feather="info"></i></tooltip></label>
+                                                            <select id="storage" class="form-select">
+                                                                <option selected>Auto Storage selection </option>
+                                                                <option selected>Select Storage</option>
+                                                                <option value="1">Warehouse A</option>
+                                                                <option value="2">Warehouse B</option>
+                                                            </select>
+                                                        </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="card mb-2">
+                                    <div class="card-header border-bottom">
+                                        <h4 class="card-title"> Fill out the order address</h4>
+                                        <div class="col-12">
+                                            <div class="card-body">
+                                                <form class="row g-1">
+                                                        <div class="col-md-6">
+                                                        <label class="form-label" for="firstName">First Name</label>
+                                                        <input type="text" id="firstName" class="form-control" placeholder="First Name" />
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label class="form-label" for="lastName">Last Name</label>
+                                                        <input type="text" id="lastName" class="form-control" placeholder="Last Name" />
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label class="form-label" for="company">Company</label>
+                                                        <input type="text" id="company" class="form-control" placeholder="Company" />
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label class="form-label" for="email">Email</label>
+                                                        <input type="email" id="email" class="form-control" placeholder="Email" />
+                                                    </div>
+                                                    <div class="col-md-6">  
+                                                        <label class="form-label" for="phone">Phone</label>
+                                                        <input type="text" id="phone" class="form-control" placeholder="Phone" />
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label class="form-label" for="address">Address</label>
+                                                        <input type="text" id="address" class="form-control" placeholder="Address" />
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label class="form-label" for="city">City</label>
+                                                        <input type="text" id="city" class="form-control" placeholder="City " />
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label class="form-label" for="postalCode">Postal Code</label>
+                                                        <input type="text" id="postalCode" class="form-control" placeholder="Postal Code" />
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label class="form-label" for="country">Country</label>
+                                                        <select id="country" class="form-select">
+                                                            <option selected>Choose...</option>
+                                                            <option value="1">United States</option>
+                                                            <option value="2">Canada</option>
+                                                            <option value="3">United Kingdom</option>
+                                                            <option value="4">Germany</option>
+                                                            <option value="5">France</option>
+                                                            <option value="6">Australia</option>
+                                                            <option value="7">India</option>
+                                                            <option value="8">Japan</option>
+                                                            <option value="9">China</option>
+                                                            <option value="10">Brazil</option>
+                                                            <option value="11">South Africa</option>
+                                                            <option value="12">Italy</option>
+                                                            <option value="13">Spain</option>
+                                                            <option value="14">Mexico</option>
+                                                            <option value="15">Netherlands</option>
+                                                            <option value="16">Switzerland</option>
+                                                            <option value="17">Sweden</option>
+                                                            <option value="18">New Zealand</option>
+                                                            <option value="19">Russia</option>
+                                                            <option value="20">Singapore</option>
+                                                        </select>
+                                                    </div>
+                                                    </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="card mb-2">
+                                    <div class="card-header border-bottom">
+                                        <h4 class="card-title"> Extra Information </h4>
+                                        <div class="col-12">
+                                            <div class="card-body">
+                                                <form class="row g-1">
+                                                        <div class="col-md-12">
+                                                            <label class="form-label" for="notes">Order Notes</label>
+                                                            <textarea id="notes" class="form-control" rows="1" placeholder="Order Notes"></textarea>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label class="form-label" for="additionalDocs">Additional Documents </label>
+                                                            <input type="file" id="additionalDocs" class="form-control" />
+                                                            <small class="form-text text-muted">Invoice if Required - Only PDF</small>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label for="PickingNotice">Picking Notice</label>
+                                                            <input type="text" id="PickingNotice" class="form-control" placeholder="Picking Note" />
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="card sticky-top sticky-with-offset" style="top: 100px;">
+                                <div class="card-header border-bottom">
+                                    <h4 class="card-title">Order Summary</h4>
+                                    <div class="col-12">
+                                        <div class="card-body">
+                                            <form class="row g-1">
+                                                <div class="col-md-6">
+                                                    <label class="form-label" for="subtotal">Subtotal</label>
+                                                    <input type="text" id="subtotal" class="form-control" placeholder="0.00" />
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label class="form-label" for="tax">Tax (10%)</label>
+                                                    <input type="text" id="tax" class="form-control" placeholder="0.00" />
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label class="form-label" for="shipping">Shipping</label>
+                                                    <input type="text" id="shipping" class="form-control" placeholder="0.00" />
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label class="form-label" for="discount">Discount</label>
+                                                    <input type="text" id="discount" class="form-control" placeholder="0.00" />
+                                                </div>
+                                                <div class="col-12">
+                                                    <label class="form-label" for="total">Total</label>
+                                                    <input type="text" id="total" class="form-control" placeholder="0.00" />
+                                                </div>
+                                                <div class="d-grid">
+                                                    <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#successModal">Place Order</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    
+        <!-- Add, Edit positions Modal -->
+                <div class="modal fade" id="addItemsModal" tabindex="-1" aria-labelledby="addItemsModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-xl">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="addItemsModalLabel">Add, Edit or Remove positions</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <!-- Alertas Informativas -->
+                                <div class="alert alert-primary p-1" role="alert">
+                                    <i data-feather="info" class="me-1"></i>
+                                    Here you can add, edit or remove positions of your order.
+                                </div>
+                                <div class="alert alert-warning p-1" role="alert">
+                                    <i data-feather="alert-triangle" class="me-1"></i>
+                                    You need to make sure to select the correct identifier if you are adding, or editing an existing position.
+                                </div>
+
+                                <!-- Section for Adding a New Product-->
+                                <div class="add-item-section border rounded p-2 mb-3">
+                                    <div class="row g-1 align-items-center">
+                                        <div class="col-md-5">
+                                            <label for="productSearchInput" class="form-label">Search for a product *</label>
+                                            <div class="position-relative">
+                                                <input type="text" id="productSearchInput" class="form-control" placeholder="Please enter 3 or more characters">
+                                                <div id="productSuggestions" class="list-group position-absolute w-100" style="z-index: 1056;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label for="productPriceInput" class="form-label">Price per article</label>
+                                            <input type="number" id="productPriceInput" class="form-control" placeholder="0.00">
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label for="productQuantityInput" class="form-label">Number of articles</label>
+                                            <input type="number" id="productQuantityInput" class="form-control" value="1">
+                                        </div>
+                                        <div class="col-md-3 d-flex align-items-end">
+                                            <button type="button" id="addNewItemBtn" class="btn btn-primary w-100">Add</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Table of Items in the Order -->
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Product</th>
+                                                <th style="width: 100px;">Quantity</th>
+                                                <th style="width: 120px;">Unit Price</th>
+                                                <th style="width: 120px;">Position Price</th>
+                                                <th style="width: 150px;">Serial Number</th>
+                                                <th style="width: 50px;"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="editableItemsTbody">
+                                            <!-- The rows of items will be inserted here dynamically. -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+                                <hr>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary" id="saveItemsButton">Save Products</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--END Add, Edit or Remove positions Modal -->
+
+        <!-- Success Modal -->
+         <div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-success">
+                <div class="modal-content text-center">
+                <div class="modal-body py-5">
+                    
+                    <div class="success-checkmark">
+                    <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                        <circle class="check-icon__circle" cx="26" cy="26" r="25" fill="none"/>
+                        <path class="check-icon__path" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                    </svg>
+                    </div>
+
+                    <h3 class="mb-3">Order Created Successfully!</h3>
+                    <p class="text-muted">Your order has been processed and sent to the warehouse. You will receive an email notification.</p>
+                    
+                    <button type="button" class="btn btn-primary mt-3" data-bs-dismiss="modal">
+                    Got it
+                    </button>
+
+                </div>
+                </div>
+            </div>
+            </div>
+        <!-- END Success Modal -->
+    </div>
+    <!-- END: Content-->
+
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+
+    <!-- BEGIN: Footer-->
+    <button class="btn btn-primary btn-icon scroll-top" type="button"><i data-feather="arrow-up"></i></button>
+    <!-- END: Footer-->
+
+    <!-- BEGIN: Vendor JS-->
+    <script src="../../../app-assets/vendors/js/vendors.min.js"></script>
+    <!-- BEGIN Vendor JS-->
+
+    <!-- BEGIN: Page Vendor JS-->
+    <!-- END: Page Vendor JS-->
+
+    <!-- BEGIN: Theme JS-->
+    <script src="../../../app-assets/js/core/app-menu.min.js"></script>
+    <script src="../../../app-assets/js/core/app.min.js"></script>
+    <script src="../../../app-assets/js/scripts/customizer.min.js"></script>
+    <!-- END: Theme JS-->
+
+    <!-- BEGIN: Page JS-->
+    <script src="../../../app-assets/js/scripts/tables/orders-details-client.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../app-assets/js/scripts/forms/form-modal.js"></script>
+    <!-- END: Page JS-->
+
+    <script>
+        $(window).on('load', function() {
+            if (feather) {
+                feather.replace({
+                    width: 14,
+                    height: 14
+                });
+            }
+        })
+    </script>
+</body>
+<!-- END: Body-->
+
+</html> 
