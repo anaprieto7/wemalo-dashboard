@@ -33,7 +33,7 @@ gulp.task('dist-clean', cleanTasks.css, cleanTasks.js);
 // Monitor Changes
 gulp.task('monitor', gulp.series(gulp.parallel(scssTasks.watch)));
 // Dist JS
-gulp.task('dist-js', gulp.series(cleanTasks.js, copyTask.js, uglifyTasks.js, notifyTasks.js));
+gulp.task('dist-js', gulp.series(cleanTasks.js, copyTask.js, uglifyTasks.js));
 
 // SASS Compile
 gulp.task(
@@ -51,8 +51,7 @@ gulp.task(
     'sass-compile',
     autoPrefixTasks.css,
     cssTasks.css_comb,
-    cssTasks.css_min,
-    gulp.parallel(notifyTasks.css)
+    cssTasks.css_min
   )
 );
 
